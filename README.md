@@ -1,23 +1,19 @@
 # ChaiVkBot
 
+## Overview
 A simple VK bot that connects to Character.ai, allowing users to chat with AI characters directly from VK Messenger.
 
-### IMPORTANT NOTE
-since vk_api has some weird bug in its code (as of may 2025), you'll need to change a few lines in /vk_api/longpoll.py:
-
-#### From:
+## Installation & Setup
+1. Clone the repo:
 ```
-    def update_longpoll_server(self, update_ts=True):
-        values = {
-            'lp_version': '3',
-            'need_pts': self.pts
-        }
+git clone https://github.com/true-sigma/ChaiVkBot.git
+cd ChaiVkBot
 ```
-#### To:
+2. Set up venv:
 ```
-    def update_longpoll_server(self, update_ts=True):
-        values = {
-            'lp_version': '3',
-            'need_pts': '1'
-        }
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
+3. Insert credentials in /config.settings.py
+4. Run main.py
