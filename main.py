@@ -52,7 +52,7 @@ def main():
             main1()
         except Exception as e:
             print(e)
-            main()
+            main1()
 
 if __name__ == '__main__':
     main()
