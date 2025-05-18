@@ -7,7 +7,7 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 # Initialize VK API
 vk_session = vk_api.VkApi(token=vk_api_key)
 vk = vk_session.get_api()
-longpoll = VkLongPoll(vk_session, wait=999999999) #TODO implement correct wait
+longpoll = VkLongPoll(vk_session, wait=999999999) # implement correct wait
 
 def main1():
     user_chats = load_user_chats()
