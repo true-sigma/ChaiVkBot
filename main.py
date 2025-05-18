@@ -1,3 +1,5 @@
+from curl_cffi.requests import websockets
+
 from src.json.json_tools import load_user_chats, save_user_chats
 import vk_api
 from config.settings import vk_api_key
@@ -46,7 +48,11 @@ def main1():
 
 def main():
     while True:
-        main1()
+        try:
+            main1()
+        except Exception as e:
+            print(e)
+            main()
 
 if __name__ == '__main__':
     main()
