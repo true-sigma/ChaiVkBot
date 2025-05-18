@@ -1,2 +1,2 @@
 git+https://github.com/kramcat/characterai
-https://github.com/python273/vk_api
+git+https://github.com/python273/vk_api
