@@ -15,5 +15,5 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-3. Insert credentials in /config.settings.py
+3. Insert credentials in /config/settings.py
 4. Run main.py
