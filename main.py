@@ -5,12 +5,15 @@ from config.settings import vk_api_key
 from src.character_ai import chai
 from src.json.json_tools import load_user_chats, save_user_chats
 
-# Initialize VK API
-vk_session = vk_api.VkApi(token=vk_api_key)
-vk = vk_session.get_api()
-longpoll = VkLongPoll(vk_session, wait=999999999) # implement correct wait
 
-def main1():
+# Initialize VK API
+def start_session():
+    vk_session = vk_api.VkApi(token=vk_api_key)
+    vk1 = vk_session.get_api()
+    longpoll1 = VkLongPoll(vk_session, wait=30)
+    return longpoll1, vk1
+
+def main1(longpoll, vk):
     user_chats = load_user_chats()
 
     while True:
@@ -48,10 +51,12 @@ def main1():
 def main():
     while True:
         try:
-            main1()
+            longpoll, vk = start_session()
+            main1(longpoll, vk)
         except Exception as e:
             print(e)
-            main1()
+            longpoll, vk = start_session()
+            main1(longpoll, vk)
 
 if __name__ == '__main__':
     main()
