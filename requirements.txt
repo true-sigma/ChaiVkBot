@@ -1,2 +1,5 @@
 git+https://github.com/kramcat/characterai
 git+https://github.com/python273/vk_api
+
+characterai == 1.0.0
+vk-api == 11.9.9
