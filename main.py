@@ -1,10 +1,9 @@
-from curl_cffi.requests import websockets
-
-from src.json.json_tools import load_user_chats, save_user_chats
 import vk_api
+from vk_api.longpoll import VkLongPoll, VkEventType
+
 from config.settings import vk_api_key
 from src.character_ai import chai
-from vk_api.longpoll import VkLongPoll, VkEventType
+from src.json.json_tools import load_user_chats, save_user_chats
 
 # Initialize VK API
 vk_session = vk_api.VkApi(token=vk_api_key)
